@@ -42,6 +42,7 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-viewmodel:2.6.1")
     implementation("androidx.lifecycle:lifecycle-livedata:2.6.1")
     implementation("androidx.activity:activity:1.8.0")
+    implementation("com.github.bumptech.glide:glide:4.16.0")
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)

@@ -14,15 +14,23 @@ public class MainViewModel extends ViewModel {
     public MainViewModel() {
         lista.add(new Libro("El Hobbit", "J.R.R Tolkien", 300, 1937,
                 Arrays.asList("Fantasía", "Aventura"),
-                "El Hobbit, o ida y vuelta es una novela de fantasía para niños del autor inglés J. R. R. Tolkien. Fue publicado en 1937 con gran éxito de crítica, siendo nominado a la Medalla Carnegie y galardonado con un premio del New York Herald Tribune a la mejor ficción juvenil."));
+                "Bilbo Bolsón se lanza a una aventura con Gandalf y enanos para recuperar un tesoro.",
+                "https://imagessl6.casadellibro.com/a/l/t0/46/9788445001646.jpg"));
 
-        lista.add(new Libro("Crimen y Castigo", "Fedor Dostoyevski", 672, 1866,
-                Arrays.asList("Psicológico", "Drama", "Filosófico"),
-                "Crimen y castigo es una novela del escritor ruso Fiódor Dostoyevski. Sigue al estudiante Rodión Raskólnikov, quien planea un asesinato para probar su teoría sobre la superioridad moral de ciertos individuos y enfrenta las consecuencias psicológicas de su acto."));
+        lista.add(new Libro("Crimen y Castigo", "Fiodor Dostoyevski", 672, 1866,
+                Arrays.asList("Psicológico", "Drama"),
+                "Raskólnikov comete un asesinato y enfrenta un profundo tormento moral.",
+                "https://imagessl8.casadellibro.com/a/l/t0/38/9788437614038.jpg"));
 
         lista.add(new Libro("Orgullo y Prejuicio", "Jane Austen", 432, 1813,
-                Arrays.asList("Romance", "Sátira", "Drama Social"),
-                "La historia de las hermanas Bennet y su búsqueda de amor y posición social en la Inglaterra rural. El enfoque central está en Elizabeth Bennet y su relación con el adinerado y orgulloso Fitzwilliam Darcy, explorando temas de prejuicio y malentendidos."));
+                Arrays.asList("Romance", "Drama Social"),
+                "La relación entre Elizabeth Bennet y Fitzwilliam Darcy en la Inglaterra del siglo XIX.",
+                "https://mestasediciones.com/wp-content/uploads/2020/06/C60-Orgullo-y-prejuicio.jpg"));
+
+        lista.add(new Libro("1984", "George Orwell", 328, 1949,
+                Arrays.asList("Distopía", "Política"),
+                "Winston Smith intenta rebelarse contra el control total del Gran Hermano.",
+                "https://www.bookerworm.com/images/1984.jpg"));
     }
 
     public LiveData<Libro> getMLibro() {
