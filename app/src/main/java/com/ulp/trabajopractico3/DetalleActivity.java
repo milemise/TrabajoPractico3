@@ -1,8 +1,12 @@
 package com.ulp.trabajopractico3;
 
+import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
+import com.google.android.material.chip.Chip;
 import com.ulp.trabajopractico3.databinding.ActivityDetalleBinding;
+import java.util.List;
 
 public class DetalleActivity extends AppCompatActivity {
     private ActivityDetalleBinding binding;
@@ -16,10 +20,29 @@ public class DetalleActivity extends AppCompatActivity {
         Libro l = (Libro) getIntent().getSerializableExtra("libro");
 
         if (l != null) {
-            binding.tvTitulo.setText(l.getTitulo());
-            binding.tvAutor.setText("Autor: " + l.getAutor());
-            binding.tvPaginas.setText("Páginas: " + l.getPaginas());
-            binding.tvDescripcion.setText(l.getDescripcion());
+            binding.tvTituloDetalle.setText(l.getTitulo());
+            binding.tvAutorDetalle.setText(l.getAutor());
+            binding.tvPaginasDetalle.setText(l.getPaginas() + " páginas");
+            binding.tvAnioDetalle.setText(String.valueOf(l.getAnioPublicacion()));
+            binding.tvDescripcionDetalle.setText(l.getDescripcion());
+
+            List<String> generos = l.getGeneros();
+            if (generos != null && !generos.isEmpty()) {
+                for (String genero : generos) {
+                    Chip chip = new Chip(this);
+                    chip.setText(genero);
+                    chip.setChipBackgroundColor(ColorStateList.valueOf(Color.parseColor("#E8F5E9")));
+                    chip.setTextColor(Color.parseColor("#2E7D32"));
+                    chip.setChipStrokeColor(ColorStateList.valueOf(Color.parseColor("#C8E6C9")));
+                    chip.setChipStrokeWidth(1);
+                    chip.setTextSize(12);
+                    binding.cgGeneros.addView(chip);
+                }
+            }
         }
+
+        binding.btnVolverDetalle.setOnClickListener(v -> {
+            onBackPressed();
+        });
     }
 }
